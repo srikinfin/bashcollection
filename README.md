@@ -1,4 +1,4 @@
 bashcollection
 ==============
 
-Collection of usually used bash script
+Collection of some bash scripts I had made, hopefully useful sometime
