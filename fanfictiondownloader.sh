@@ -47,14 +47,15 @@ curl $url >> file.htm
 fname="${fname}.txt"
 lynx file.htm -dump >> $fname
 echo file name saved as $fname
+echo $fname $url >> DownloadedStories
 
 
-# send the text file to the memory card and register the downloaded story in a file named 'list'
+# send the text file to the memory card and register the sent story in a file named 'list'
 
-#TODO: make this dynamically recognizing devices
+#TODO: dynamically recognize devices to be sent
 if [ -d /media/BH1/ebooks/stories/ ] ; then
 {
-	mv *.txt /media/BH1/ebooks/stories/
+	mv $fname /media/BH1/ebooks/stories/
 	#TODO: giving single filename with spaces won't work, replace them with underscores
 	
 	mv $fname /media/BH1/ebooks/stories/
