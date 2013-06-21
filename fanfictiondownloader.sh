@@ -25,7 +25,7 @@ echo $url
 curl $url > file.htm 
 # save the webpage offline
 
-fname=`grep '<center><b>' file.htm | head -1 | cut -d '>' -f 5 | tr -d '</b>' | sed 's/ /-/g'`
+fname=`grep '<center><b>' file.htm | head -1 | cut -d '>' -f 6 | tr -d '</b>' | sed 's/ /-/g'`
 #find the story name by parsing the downloaded web page
 
 totalchap=`grep 'var chs' file.htm | head -1 | tr -d 'var chs =' | tr -d '\t' | tr -d ';'`
