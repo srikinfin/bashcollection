@@ -10,15 +10,21 @@
 
 options=$*
 
-vim /home/ennova/$options.c;
-#echo /////////////////// C Program compilation \\\\\\\\\\\\\\\\\\  
+vim $pwd$options.java
+
+#vim /home/ennova/$options.java;
+#echo /////////////////// Java Program compilation \\\\\\\\\\\\\\\\\\  
 echo
-echo Compiling $options.c to $options
+clear;
+echo   Compiling $options.java ....  
 javac $options.java; 
-# echo Adding execute permission to $options
-# chmod a+x $*; 
-echo The Output:
-echo ------------------------------------------------------------
+echo "Created $options.class" ; 
+echo;
+
+echo ---------------------- Start of Output --------------------------
 java $*
-echo ------------------------------------------------------------
+echo
+echo ---------------------- End of Output ----------------------------
 #echo `//////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`
+#echo "$options.class deleted";
+echo; echo
