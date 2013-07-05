@@ -8,7 +8,7 @@
 #echo 
 #echo $*
 
-options=$*
+options=`echo $* | sed 's/.java//'`
 
 vim $pwd$options.java
 
@@ -23,7 +23,6 @@ echo;
 
 echo ---------------------- Start of Output --------------------------
 java $*
-echo
 echo ---------------------- End of Output ----------------------------
 #echo `//////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`
 #echo "$options.class deleted";
