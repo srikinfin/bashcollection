@@ -5,25 +5,21 @@
 #Shows the Command to be executed and the output together
 #set -x
 
-#echo 
-#echo $*
-
+#Accepts both "FileName" and "Filename.java" as inputs
 options=`echo $* | sed 's/.java//'`
 
 vim $pwd$options.java
 
-#vim /home/ennova/$options.java;
-#echo /////////////////// Java Program compilation \\\\\\\\\\\\\\\\\\  
-echo
 clear;
-echo   Compiling $options.java ....  
+echo ================= Java program compilation ======================
+echo
+echo  Compiling $options.java ....  
 javac $options.java; 
-echo "Created $options.class" ; 
+echo  "Created $options.class" ; 
 echo;
 
 echo ---------------------- Start of Output --------------------------
 java $*
 echo ---------------------- End of Output ----------------------------
-#echo `//////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`
-#echo "$options.class deleted";
-echo; echo
+echo; 
+echo;
