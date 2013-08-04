@@ -1,8 +1,18 @@
 #!/bin/bash
-#Program to recieve C source code and output them directly 
-#in single step
+#Program to recieve Java source code and compile, run the program, show output directly 
 
-#Shows the Command to be executed and the output together
+# Debugging the shell script#
+#set -x
+
+
+### Step to exection 
+#   $ jj FILENAME     or      $ jj FILENAME.java
+#   ----> opens the file given by vim editor
+#   ----> When the file is saved and exited to Shell
+#   ----> javac  is called
+#   ----> If there was no errors, run the program
+
+
 #set -x
 
 #Accepts both "FileName" and "Filename.java" as inputs
@@ -15,11 +25,19 @@ echo ================= Java program compilation ======================
 echo
 echo  Compiling $options.java ....  
 javac $options.java; 
-echo  "Created $options.class" ; 
-echo;
 
+#if  [ $? != 0 ]; then
+#echo  "Created $options.class" ; 
+#echo;
+#fi
+
+if [ $? = 0 ]; then
+{
 echo ---------------------- Start of Output --------------------------
-java $*
+java $options
 echo ---------------------- End of Output ----------------------------
 echo; 
 echo;
+
+}
+fi
